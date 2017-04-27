@@ -16,11 +16,11 @@ public class PopUpModalDialog extends AbstractBase {
     @FindBy(id = "_tealiumModalClose")
     protected WebElement closeDialogButton;
 
-    public WebElement getCloseDialogButton() {
+    public WebElement getCloseFeedbackDialogButton() {
         return getDriverExtension().isExistsReturnWebElement(closeDialogButton);
     }
 
     public void closeWindow() {
-        getDriverExtension().safeClickElement(getCloseDialogButton());
+        getDriverExtension().safeClickElement(getCloseFeedbackDialogButton());
     }
 }

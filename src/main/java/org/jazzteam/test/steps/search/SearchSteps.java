@@ -35,6 +35,7 @@ public class SearchSteps {
     }
 
     public SearchResultSteps searchWithParam(String postcode, String carMark, String carModel) {
+        getSearchPage().handleFeedbackDialog();
         return getSearchBar()
                 .setPostcode(postcode)
                 .setMakeCombobox(carMark)

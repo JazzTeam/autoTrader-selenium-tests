@@ -75,6 +75,7 @@ public class HeaderSteps {
     }
 
     public MyAutoTradeSteps goToMyAutoTradePage() {
+        getHeaderPage().handleFeedbackDialog();
         getHeaderPage().doOpenMyAutoTradePage();
         MyAutoTradeSteps myAutoTradeSteps =  ApplicationContextUtils.getBean(MyAutoTradeSteps.class);
         assertThat("MyAutoTradeSteps was not create", myAutoTradeSteps, Matchers.notNullValue());
