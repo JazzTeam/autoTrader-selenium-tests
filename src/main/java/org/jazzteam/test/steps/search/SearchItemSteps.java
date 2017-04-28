@@ -24,7 +24,6 @@ public class SearchItemSteps {
     }
 
     public void savedCar(){
-        getSearchItemPage().handleFeedbackDialog();
         if(!getSearchItemPage().isCheccked())
             getSearchItemPage().clickSaved();
     }
@@ -35,7 +34,6 @@ public class SearchItemSteps {
     }
 
     public void checkSavedCar(String carName, boolean isExist){
-        getSearchItemPage().handleFeedbackDialog();
         boolean result = getSearchItemPage().isCheccked();
         assertThat( "Car  " + carName + (isExist ? " not" : " ") + " saved in savedList",result, is(isExist));
     }

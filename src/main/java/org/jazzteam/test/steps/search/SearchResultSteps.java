@@ -26,7 +26,6 @@ public class SearchResultSteps {
     }
 
     public void goToPageByNumber(String pageNumber) {
-        getSearchResultPage().handleFeedbackDialog();
         getSearchResultPage().clickPageByNumber(pageNumber);
     }
 
@@ -35,7 +34,6 @@ public class SearchResultSteps {
     }
 
     public SearchItemSteps doOpenSearchItemPageByName(String itemName) {
-        getSearchResultPage().handleFeedbackDialog();
         getSearchResultPage().doOpenSearchItemPageByName(itemName);
 
         SearchItemSteps searchItemSteps =  ApplicationContextUtils.getBean(SearchItemSteps.class);
@@ -54,7 +52,6 @@ public class SearchResultSteps {
     }
 
     public String getCarNameByIndex(int itemIndex) {
-        getSearchResultPage().handleFeedbackDialog();
         return getSearchResultPage().getItemNameByIndex(itemIndex);
     }
 

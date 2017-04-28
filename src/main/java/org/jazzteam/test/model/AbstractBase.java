@@ -5,8 +5,6 @@ import org.jazzteam.test.core.DriverExtension;
 import org.jazzteam.test.core.DriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.springframework.stereotype.Component;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
@@ -19,13 +17,6 @@ import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 public abstract class  AbstractBase extends HtmlElement {
 
     public static final int WAIT_PERIOD = 1000;
-
-    /**
-     * This selector is specially converted to absolute paths,
-     * because the web element is outside the extended component of forms and relative paths it is not visible.
-     */
-    @FindBy(css = "//*[@id=\"fsrOverlay\"]/div/div/div/a")
-    protected WebElement closeFeedbackDialogButton;
 
     /**
      * Declared as 'static' cause is called inside
@@ -65,8 +56,6 @@ public abstract class  AbstractBase extends HtmlElement {
         return HtmlElementLoader.create(var1, getDriverExtension().getWrappedDriver());
     }
 
-
-
     protected void afterPageInitialization() {
 
     }
@@ -80,11 +69,5 @@ public abstract class  AbstractBase extends HtmlElement {
     @Override
     public <X> X getScreenshotAs(OutputType<X> outputType) throws WebDriverException {
         return null;
-    }
-
-    public void handleFeedbackDialog(){
-        if(getDriverExtension().isExistsReturnWebElement(closeFeedbackDialogButton) != null){
-            getDriverExtension().safeClickElement(closeFeedbackDialogButton);
-        }
     }
 }

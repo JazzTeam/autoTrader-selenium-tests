@@ -26,7 +26,6 @@ public class MyAutoTradeSteps {
     }
 
     public SavedAdvertsSteps goToSavedAdvertsPage() {
-        getMyAutoTradePage().handleFeedbackDialog();
         getMyAutoTradePage().doOpenSavedAdverts();
         SavedAdvertsSteps savedAdvertsSteps =  ApplicationContextUtils.getBean(SavedAdvertsSteps.class);
         assertThat("SavedAdvertsSteps was not create", savedAdvertsSteps, Matchers.notNullValue());

@@ -11,7 +11,7 @@ The following test cases was realized during performing of the testing task:
 Implementation features:
 
 Described test sometimes can be failed. It is related to the fact that sometimes in any place of the application can pop-up dialog "We'd welcome your feedback!".
-I handle all occurrences of this dialog, which I was able to track, but there is risk that I missed something.
+Due to the chaotic behavior of this dialogue I didn’t have enough time to atomize it, but I can easily to automate on it if necessary.
 If the test failed because of dialog it is needed to be restarted.
 The test was written and tested under Windows 7 and Chrome browser.
 
